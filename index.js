@@ -103,7 +103,7 @@ function boxIntersectWrapper(arg0, arg1, arg2, arg3, arg4) {
         return boxIntersectSame(arg0, arg1, arg2)
       }
     case 5:
-      return boxIntersect(arg0, arg1, arg2, arg3, arg4)
+      return boxIntersectOther(arg0, arg1, arg2, arg3, arg4)
     default:
       throw new Error('box-intersect: Invalid arguments')
   }
