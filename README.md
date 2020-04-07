@@ -1,3 +1,25 @@
+### This fork
+
+* visitor function is required
+
+* calls visitor functions with items instead of indexes
+
+* input arrays are arrays of objects with `bbox` property instead of AABBs
+
+* items with property `_removed` set to `true` are not omitted 
+
+* length of the arrays can be specified separately
+
+  ```javascript
+  boxIntersect(red, visit)
+  boxIntersect(red, length, visit)
+  boxIntersect(red, blue, visit)
+  boxIntersect(red, redLength, blue, blueLength, visit)
+  ```
+
+
+
+
 box-intersect
 =============
 This modules finds all intersection in a set of n boxes in d-dimensions, or between a pair of sets with n and m boxes respectively.  The time taken is O((n+m) log^d(n+m)) and the algorithm uses a temporary scratch memory of size O(n+m).  This memory is pooled so that after the first execution no additional memory is allocated.  Some possible applications of this library include:
@@ -11,7 +33,7 @@ The algorithm in this package is based on the one described in the following pap
 
 * [A. Zomorodian, H. Edelsbrunner. (2000) "Software for fast box intersections" In proceedings of SoCG](http://pub.ist.ac.at/~edels/Papers/2002-J-01-FastBoxIntersection.pdf)
 
-A detailed experimental analysis of the performance of this module as well as comparisons with other libraries for box intersection can be found in the following repository: 
+A detailed experimental analysis of the performance of this module as well as comparisons with other libraries for box intersection can be found in the following repository:
 
 * [The Great JavaScript Box Intersection Benchmark](https://github.com/mikolalysenko/box-intersect-benchmark)
 
